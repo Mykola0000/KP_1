@@ -1,21 +1,26 @@
-function Airplane(color, avgSpeed, maxAltitude, brand, destination) {
+
+function Jet(color, avgSpeed, maxAltitude, brand, pointOfDestination) {
     this.color = color;
     this.avgSpeed = avgSpeed;
     this.maxAltitude = maxAltitude;
     this.brand = brand;
-    this.destination = destination;
+    this.pointOfDestination = pointOfDestination;
 }
 
 
-Airplane.setProperties = function(obj, color, avgSpeed, maxAltitude, brand, destination) {
-    obj.color = color;
-    obj.avgSpeed = avgSpeed;
-    obj.maxAltitude = maxAltitude;
-    obj.brand = brand;
-    obj.destination = destination;
+Jet.prototype.AssignPilot = function(name, yearsOfExperience, hasChildren) {
+    this.pilot = {
+        name: name,
+        yearsOfExperience: yearsOfExperience,
+        hasChildren: hasChildren
+    };
 };
 
-у
-var airplane1 = {};
-Airplane.setProperties(airplane1, 'black', 600, 5000, 'American Airline', 'Chicago');
-console.log(airplane1);
+
+var myJet = new Jet('blue', 1000, 12000, 'Boeing', 'New York');
+
+
+myJet.AssignPilot('John Smith', 10, true);
+
+
+console.log(myJet);
