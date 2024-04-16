@@ -6,8 +6,16 @@ function Airplane(color, avgSpeed, maxAltitude, brand, destination) {
     this.destination = destination;
 }
 
-var airplane1 = new Airplane('black', 600, 5000, 'American Airline', 'Chicago');
 
+Airplane.setProperties = function(obj, color, avgSpeed, maxAltitude, brand, destination) {
+    obj.color = color;
+    obj.avgSpeed = avgSpeed;
+    obj.maxAltitude = maxAltitude;
+    obj.brand = brand;
+    obj.destination = destination;
+};
 
+у
+var airplane1 = {};
+Airplane.setProperties(airplane1, 'black', 600, 5000, 'American Airline', 'Chicago');
 console.log(airplane1);
-
